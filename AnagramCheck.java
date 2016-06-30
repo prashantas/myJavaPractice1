@@ -44,6 +44,38 @@ public class AnagramCheck {
        
         return anagram.isEmpty();
     }
+    
+    private static boolean isAnagram1(String first, String second)
+	{
+		// http://www.geeksforgeeks.org/check-whether-two-strings-are-anagram-of-each-other/
+		final int NOC=256;
+		int[] cnt1 = new int[NOC];  // int array values are by default initialized to 0
+		int cnt2[] = new int[NOC];
+		
+		if(first.length()==second.length())
+		{
+			char fc[] = first.toCharArray();
+			char sc[] = second.toCharArray();
+			
+			for(int i=0;i<first.length();i++)
+			{
+				cnt1[fc[i]]++;
+				cnt2[sc[i]]++;
+			}
+			
+			for(int i=0;i<NOC;i++)
+			{
+				if(cnt1[i]!=cnt2[i])
+					return false;
+			
+			}
+			
+			return true;
+		
+		}
+		else
+			return false;
+	}
    
     /*
      * Another way to check if two Strings are anagram or not in Java
