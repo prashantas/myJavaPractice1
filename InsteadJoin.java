@@ -44,7 +44,12 @@ class Task implements Runnable {
 }
 
 public class InsteadJoin{
-	private final static ReentrantLock lock = new ReentrantLock(true);
+	private final static ReentrantLock lock = new ReentrantLock(true); // ReentrantLock(boolean fair)
+								//Creates an instance of ReentrantLock with the given fairness policy.
+	// The ReentrantLock has a special flag called fairness. By making ‘fair=true‘ it ensures that the lock in granted to 
+	//the thread who requested first. By default ReentrantLock fair flag is false i.e. same behavior as intrinsic lock.
+	//But by just passing one argument
+	//to the constructor to the ReentrantLock class we can achieve the fairness we are looking for.
 	public static void main(String[] args) throws Exception{
 
 		//Create a countdown latch for 1 thread. (We just need to wait for 1 thread to complete)
