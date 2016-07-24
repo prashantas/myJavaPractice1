@@ -22,6 +22,7 @@ class LRUCache {
 	}
 }
 
+
 //**************** LRU using LinkedHashMap ***************************
 
 class LRUCacheImpl extends LinkedHashMap<Integer,String> {
