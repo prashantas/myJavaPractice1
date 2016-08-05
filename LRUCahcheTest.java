@@ -36,6 +36,7 @@ class LRUCacheImpl extends LinkedHashMap<Integer,String> {
 	/**
 	    * removeEldestEntry() should be overridden by the user, otherwise it will not
 	    * remove the oldest object from the Map.
+	    * http://stackoverflow.com/questions/20772869/what-is-the-use-of-linkedhashmap-removeeldestentry
 	    */
 	@Override	
 	protected boolean removeEldestEntry(Map.Entry<Integer, String> eldest){
