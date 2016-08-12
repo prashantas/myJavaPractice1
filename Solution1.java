@@ -24,7 +24,7 @@ public class Solution {
         BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
         int res;
         
-        int _numbers_size = 0;
+        int _numbers_size = 0; 
         _numbers_size = Integer.parseInt(in.nextLine().trim());
         int[] _numbers = new int[_numbers_size];
         int _numbers_item;
