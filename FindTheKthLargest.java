@@ -1,6 +1,13 @@
 /**
  * https://chinmaylokesh.wordpress.com/2011/03/01/order-statistics-general-find-the-kth-smallest-element-from-an-unsorted-array-in-linear-time-specific-find-median-of-unsorted-array-in-linear-time/p
  */
+ /*
+ This is an optimization over method 1 if QuickSort is used as a sorting algorithm in first step. 
+ In QuickSort, we pick a pivot element, then move the pivot element to its correct position and partition the array around it. 
+ The idea is, not to do complete quicksort, but stop at the point where pivot itself is k’th smallest element.
+ Also, not to recur for both left and right sides of pivot, but recur for one of them according to the position of pivot. 
+ The worst case time complexity of this method is O(n2), but it works in O(n) on average.
+ */
 package RiaPack;
 
 import java.util.Arrays;
