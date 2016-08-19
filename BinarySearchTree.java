@@ -252,6 +252,7 @@ class BST {
 	}
 	public boolean isBST(Node1 root)
 	{
+		// Time Complexity: O(n)
 		//return isBST(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
 		return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
