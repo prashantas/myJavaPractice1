@@ -252,7 +252,8 @@ class BST {
 	}
 	public boolean isBST(Node1 root)
 	{
-		return isBST(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
+		//return isBST(root, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY);
+		return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
 	
 	// http://codereview.stackexchange.com/questions/6774/check-if-a-binary-tree-is-a-subtree-of-another-tree
