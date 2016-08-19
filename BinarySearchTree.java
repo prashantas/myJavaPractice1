@@ -250,6 +250,8 @@ class BST {
 		if(root.key <= min || root.key >= max) return false;
 		return isBST(root.left, min, root.key) && isBST(root.right, root.key, max);
 	}
+	// there is another good method to check isBST
+	// http://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
 	public boolean isBST(Node1 root)
 	{
 		// Time Complexity: O(n)
