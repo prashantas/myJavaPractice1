@@ -11,6 +11,8 @@ class Node1 {
 	Node1 right;
 	public Node1(int key){
 		this.key =key;
+		this.left =null;
+		this.right = null;
 	}
 	@Override
 	public String toString() {
