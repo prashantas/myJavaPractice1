@@ -58,3 +58,4 @@ public class TestMain {
 }
  
  
+//  http://www.javaworld.com/article/2074996/hashcode-and-equals-method-in-java-object---a-pragmatic-concept.html
