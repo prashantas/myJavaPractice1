@@ -58,4 +58,38 @@ public class TestMain {
 }
  
  
+ //   Another example    //    http://tutorials.jenkov.com/java-collections/hashcode-equals.html
+ /*
+ public class Employee {
+    protected long   employeeId;
+    protected String firstName;
+    protected String lastName;
+    
+    public boolean equals(Object o){
+   // if(o == null)                return false;
+   // if(!(o instanceof) Employee) return false;
+   
+   if(this == o)
+	return true;
+    if((o == null) || (o.getClass() != this.getClass()))
+	return false;
+	
+    Employee other = (Employee) o;
+    if(this.employeeId != other.employeeId)      return false;
+    if(! this.firstName.equals(other.firstName)) return false;
+    if(! this.lastName.equals(other.lastName))   return false;
+
+    return true;
+  }
+  public int hashCode(){
+    return (int) employeeId *
+                firstName.hashCode() *
+                lastName.hashCode();
+  }
+  
+}
+ 
+ 
+ */
+ 
 //  http://www.javaworld.com/article/2074996/hashcode-and-equals-method-in-java-object---a-pragmatic-concept.html
