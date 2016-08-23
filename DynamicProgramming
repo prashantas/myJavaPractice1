@@ -1,3 +1,7 @@
+
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
 1. Min Cost Mtrix  ::::: http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/ 
 Dynamic Programming | Set 6 (Min Cost Path)
 Given a cost matrix cost[][] and a position (m, n) in cost[][], write a function that returns cost of minimum cost path to reach (m, n)
@@ -133,6 +137,39 @@ void fib () {
     for (int i = 2; i<n; i++)
        fibresult[i] = fibresult[i-1] + fibresult[i-2];
 }
+
+$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$
+Say we want to obtain the n-th fibonacci number.
+The series goes like this 0, 1, 1, 2, 3, 5, 8, 13 and so on. We know that the 0th entry is 0 and the 1st entry is 1.
+
+We could do the following.
+
+int fib[maxn];  
+fib[ 0 ] = 0;  
+fib[ 1 ] = 1;  
+for (int i = 2; i <= n; i++) {  
+    fib[i] = fib[i - 1] + fib[i - 2];  
+}
+
+Lets try recursive approach.
+Because recursive definitions are so much more intuitive and elegant than iterative solutions, in most cases at least! 
+Let’s try to solve the same problem as we did before with a recursive approach instead.
+
+int fib[maxn+1];  
+for(int i=0;i<=n;i++ )
+{
+   fib[i] = -1;
+}
+int solve(int n) {  
+    if (n == 0 || n == 1) {    // base conditions  
+        return fib[n] = n;  
+    }  
+    if (fib[n] != -1) {    // if memoized then return the value  
+        return fib[n];  
+    }  
+    return fib[n] = solve(n - 1) + solve(n - 2);    // recursive definition  
+}
 ************************************************************************************************************
 ***********************************************************************************************************
 Let's look at a sample problem:
@@ -212,7 +249,12 @@ int cache[N][N]; // all values initialized to -1 (or anything you choose)
      // these two lines save the day
       if (cache[be][en] != -1)
         return cache[be][en];
+        
+      // year is equivalent to the number of wines we have already sold plus one, which is equivalent to the total number 
+      // of wines from the beginning minus the number of wines we have not sold plus one.  
+      //  (en-be+1) is the number of unsold wines
       int year = N - (en-be+1) + 1;
+      
       // when calculating the new answer, don't forget to cache it
       return cache[be][en] = max(
         profit(be+1, en) + year * p[be],
