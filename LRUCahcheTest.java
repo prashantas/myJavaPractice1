@@ -1,3 +1,8 @@
+// linked hash map working and implementation
+// http://www.javamadesoeasy.com/2015/02/linkedhashmap-custom-implementation.html
+// linkedHashMap maintain two variable after and before to maintain insertion order
+// Entry<K,V> after, before ;;;;;; For details, see the above link
+
 package RiaPack;
 
 import java.util.HashMap;
