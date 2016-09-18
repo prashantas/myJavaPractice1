@@ -1,5 +1,6 @@
+import java.util.Iterator;
 // http://cs-fundamentals.com/data-structures/stack-implementation-in-java.php
-interface Stack <E>
+interface Stack <E> extends Iterable <E>
 {
     E getTop(); // return the top E without removing it from stack
     E pop(); // return the top E and removes it from stack
@@ -74,7 +75,7 @@ class ArrayStack <E> implements Stack <E>
         elements = t;
     }
  
-  /*  public Iterator<E> iterator()
+    public Iterator<E> iterator()
     {
         return new ArrayStackIterator();
     }
@@ -97,7 +98,7 @@ class ArrayStack <E> implements Stack <E>
         {
            // not needed
         }
-    } */
+    } 
 }
 
 
@@ -118,10 +119,10 @@ public class MyStackTest {
 	 
 	    System.out.println("Size of the stack: " + s.size());
 	    
-	/* // iterate through stack
+	 // iterate through stack
 	    System.out.println("Following items pushed to Stack as of now:");
 	    for (Integer i : s)
-	      System.out.println(i);*/
+	      System.out.println(i);
 
 	}
 
