@@ -257,3 +257,6 @@ Craig	Programmer	30	52000
 Alice	Programmer	35	80000
 ********************************************************************************/
 // This Question was asked in Cisco interview : https://www.youtube.com/watch?v=-iggRLFANVg
+//https://www.youtube.com/watch?v=OvAHS31_CkE     [ NIIT Technologies Interview...very good]
+//https://www.youtube.com/watch?v=67xrRuMS5IM     [ MPhasis]
+//https://www.youtube.com/watch?v=l1vv1GqNymY     [ Photon Infotech]
