@@ -106,15 +106,14 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import org.json.simple.JSONObject;
 
-@SlingServlet(paths = "/bin/varifySafetyLink")
+@SlingServlet(paths = "/bin/carifyrestcall")
 @Service(VarifyGis.class)
 
 
-public class VarifySafetyLink extends SlingAllMethodsServlet {
+public class VarifyRestAPICall extends SlingAllMethodsServlet {
 	
 	private final Logger logger = LoggerFactory.getLogger(getClass());
-	private final String restUrl = "Enter the URL here";
-	// Basic dG1yLWV4Y2hhbmdldmlld2VyOk1LS0BTeWRuZXkxMg==
+	private final String restUrl = "Enter the URL here";	
 	private final String username = "UserName Here";
 	private final String password = "Password Here";
 
