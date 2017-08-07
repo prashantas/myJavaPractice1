@@ -80,7 +80,7 @@ public class HttpPostReq
 // curl -H "Content-Type: application/json" -X POST  -u myusername:mypassword -d '{"name":"davy jones" , "email":"davy@gmail.com"}' https://myApp.com/api/v1/json
 //****************************************************************
 //*****************************************************************
-package au.gov.tmr.TmrGisIntegration.core.servlets;
+
 
 import java.io.IOException;
 
@@ -107,7 +107,7 @@ import java.nio.charset.Charset;
 import org.json.simple.JSONObject;
 
 @SlingServlet(paths = "/bin/carifyrestcall")
-@Service(VarifyGis.class)
+@Service(carifyrestcall.class)
 
 
 public class VarifyRestAPICall extends SlingAllMethodsServlet {
@@ -127,10 +127,10 @@ public class VarifyRestAPICall extends SlingAllMethodsServlet {
 		if (req.getParameterMap().containsKey("inputpayload")) {
 			inputpayload = req.getParameter("inputpayload");
 			if(inputpayload.isEmpty() || inputpayload=="" ){
-				inputpayload = getInputPayloadForSafetyNet();
+				inputpayload = getInputPayload();
 			}
 		}else {
-			inputpayload = getInputPayloadForSafetyNet();
+			inputpayload = getInputPayload();
 		}
 		//String jsonData=user.toString();
        // HttpPostReq httpPostReq=new HttpPost();
@@ -198,21 +198,12 @@ public class VarifyRestAPICall extends SlingAllMethodsServlet {
 	        return result.toString();
 	    }
 	
-	public String getInputPayloadForSafetyNet(){
+	public String getInputPayload(){
 		
 		String inputpayload =	"{ \"inputRefId\": \"something\","					 
 					+ "\"customerId\": \"something\","
 					+ "\"orgType\": \"something\","
-					+  "\"confirmationDate\": \"2012-09-08\","
-					+  "\"postCodeMatch\": \"2075\","
-					+  "\"surname\": \"something\","
-					+  "\"firstName\": \"something\","
-					+  "\"middleName\": \"something\","
-					+  "\"dateOfBirth\": \"1970-10-23\","
-					+  "\"addressLine1\": \"Level 1\","
-					+  "\"addressLine2\": \"something\","
-					+  "\"suburb\": \"something\","
-					+  "\"state\": \"something\","
+					+  "\"confirmationDate\": \"2012-09-08\","					
 					+  "\"postCode\": \"2075\""
 					+ "}"  ;
 	
