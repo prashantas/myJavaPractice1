@@ -146,6 +146,7 @@ The series goes like this 0, 1, 1, 2, 3, 5, 8, 13 and so on. We know that the 0t
 We could do the following.
 
 int fib[maxn];  
+### to create an empyt list in python with size n, fib = [None]*n   or fib = [ None for _ in range(n)]
 fib[ 0 ] = 0;  
 fib[ 1 ] = 1;  
 for (int i = 2; i <= n; i++) {  
