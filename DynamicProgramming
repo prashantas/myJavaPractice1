@@ -134,6 +134,9 @@ Using Dynamic Programming approach with memoization:
 void fib () {
     fibresult[0] = 1;
     fibresult[1] = 1;
+    ## in python , for i in lst[2:]:        ## to start a list from 2 for the list lst
+    ## for number n, for i in range(2,n+1):
+    
     for (int i = 2; i<n; i++)
        fibresult[i] = fibresult[i-1] + fibresult[i-2];
 }
