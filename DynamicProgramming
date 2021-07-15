@@ -522,4 +522,55 @@ Output:
 
 LCS of AGGTAB and GXTXAYB is GTAB
 #########################################################################################################################
+##############################################################################################################################
+Python Implementation of longest commong subseq.
+def lcslen(X,Y, m,n):
+    L = [[0 for x in range(n+1)] for y in range(m+1)]
+    
+    for i in range(m+1):
+        for j in range(n+1):
+            if i==0 or j==0:
+                L[i][j] = 0
+            elif X[i-1] == Y[j-1]:
+                L[i][j] = L[i-1][j-1] + 1
+            else:
+                L[i][j] = max( L[i-1][j], L[i][j-1])     
+                
+    #return L[m][n]   ## return this only if length is needed
+    return L 
+
+def lseq(X,Y, m, n):
+    L = lcslen(X,Y,m,n)
+    index  = L[m][n]
+    length = index
+    lcs  = [""] * (index+1)
+    i = m
+    j = n
+    
+    while i > 0 and j > 0:
+        # If current character in X[] and Y[] are same, then
+        # current character is part of LCS
+        if X[i-1] == Y[j-1]:
+            lcs[index-1] = X[i-1]
+            i = i-1
+            j = j-1
+            index = index -1
+        # If not same, then find the larger of two and
+        # go in the direction of larger value
+        elif L[i-1][j] > L[i][j-1]:
+            i-=1
+        else:
+            j-=1
+        
+    print("Length of LCS is {}  AND LCS is {}".format(length, "".join(lcs)))
+                  
+    
+if __name__ == "__main__":
+    X = "AGGTAB"
+    Y = "GXTXAYB"
+    m = len(X)
+    n = len(Y)
+    print(lseq(X, Y, m, n))
+    ## LCS of AGGTAB and GXTXAYB is GTAB
+
 #########################################################################################################################
